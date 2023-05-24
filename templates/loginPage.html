@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Authentication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    <h1>Authentication Page</h1>
+    <form action="http://127.0.0.1:5000/audioTotext">
+
+        <div id="actionDiv" class="container">
+
+            <!-- <label for="action">Choose Action</label> -->
+            <select id="action" style="visibility: hidden;">
+                <option value="login" onclick="setVisible(this)">Login</option>
+            </select>
+            <br>
+            <label for="username">Enter Email</label>
+            <input id="username" type="text" placeholder="Enter Your Email" required />
+
+            <label for="password">Enter Password</label>
+            <input id="password" type="password" placeholder="Enter Your Password" required />
+            
+            
+            <p>Please Read the Below phrase : </p><br>
+            <h2><b> {{ text }} </b></h2>
+            <div id="controls">
+                <button id="recordButton">Record</button>
+                <button id="pauseButton" disabled>Pause</button>
+                <button id="stopButton" disabled>Stop</button>
+            </div>
+            <div style="visibility: hidden;" id="formats">
+                Format: start recording to see sample rate
+            </div>
+            <h3></h3>
+            <ol id="recordingsList"></ol>
+
+        </div>
+
+        <button type="submit" id="submitButton" value="Submit">Submit</button>
+
+       
+
+    </form>
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript"></script>
+
+</body>
+
+</html>

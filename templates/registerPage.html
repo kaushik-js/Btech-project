@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Authentication</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+
+<body>
+    
+    <form action="http://127.0.0.1:5000/audioTotext">
+        <h1>Registration Page</h1>
+        <div id="actionDiv" class="container">
+
+            <!-- <label for="action">Choose Action</label> -->
+            <select id="action" style="visibility: collapse;">
+                <option value="register" onclick="setVisible(this)">register</option>
+            </select>
+            <br>
+            
+            <label for="name">Enter Name</label>
+            <input id="name" placeholder="Your Name" type="text" placeholder="Enter Your Username" required />
+            
+            <label for="email">Enter Email</label>
+            <input id="email" placeholder="Your email" type="email" placeholder="Enter Your Email" required />
+
+            <label for="mobile">Enter Mobile No.</label>
+            <input id="mobile" placeholder="Your Mobile No." type="number" placeholder="Enter Your Mobile No." required />
+            
+            <label for="college">Enter College</label>
+            <input id="college" placeholder="Your College" type="text" placeholder="Enter Your College" required />
+
+            <label for="dept">Enter Department</label>
+            <input id="dept" placeholder="Your Department" type="text" placeholder="Enter Your Department" required />
+            
+            <br><br><label for="image">Profile Photo</label>
+            <input id="image" placeholder="Profile Photo" type="file" placeholder="Upload your Profile Photo" required />
+
+            <br><br><label for="about">About yourself</label>
+            <input id="about" placeholder="About yourself" type="text" placeholder="Enter About yourself" required />
+
+            <label for="password">Enter Password</label>
+            <input id="password" placeholder="Your Password" type="password" placeholder="Enter Your Password" required />
+            
+            <p>Please Read the Below phrase : </p><br>
+            <h2><b> {{ text }} </b></h2>
+            <div id="controls">
+                <button id="recordButton">Record</button>
+                <button id="pauseButton" disabled>Pause</button>
+                <button id="stopButton" disabled>Stop</button>
+            </div>
+            <div style="visibility: hidden;" id="formats">
+                Format: start recording to see sample rate
+            </div>
+            <h3></h3>
+            <ol id="recordingsList"></ol>
+            <button type="submit" id="submitButton" value="Submit">Submit</button>
+        </div>
+
+        
+
+    </form>
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script type="text/javascript"></script>
+
+</body>
+
+</html>
